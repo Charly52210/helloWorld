@@ -1,0 +1,296 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-giJF6kkoqNQ00vy+HMDP7azOuL0xtbfIcaT9wjKHr8RbDVddVHyTfAAsrekwKmP1" crossorigin="anonymous">
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta1/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-ygbV9kiqUc6oa4msXn9868pTtWMgiQaeYH7/t7LECLbyPA2x65Kgf80OJFdroafW"
+        crossorigin="anonymous"></script>
+
+    <title>Mini Projet 2</title>
+    <link href="prism.css" rel="stylesheet" />
+    <link rel="stylesheet" media="screen" href="style.css">
+</head>
+
+<body>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                <img src="img/mobile-logo.png" class="img-fluid" alt="mobile logo">
+            </div>
+
+        </div>
+
+        <hr>
+        </hr>
+
+        <div class="row">
+            <div class="col-12">
+                <h1 id="projects">Le but du projet</h1>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+
+                <p>Les consignes de ce mini-projets semblent simples au premier abord : Par groupe de deux, nous avions
+                    quelques semaines
+                    pour créer un logiciel de cryptage et de décryptage totalement fonctionnel avec un menu. Il y’avait
+                    d’abord la partie
+                    une, en donnant un texte à crypter ainsi que sa clé de cryptage, le programme nous renvoyait le
+                    texte crypté. Dans
+                    la deuxième partie, il fallait faire l’inverse. On donnait le texte crypté et la clé de décryptage
+                    et le programme
+                    nous renvoyait le texte décrypté. Et enfin la partie 3 dans laquelle on donnait juste le texte
+                    crypté et le logiciel
+                    essayait de le décrypter avec toutes les clés possibles les unes après les autres jusqu’à ce qu’on
+                    tombe sur le texte
+                    correctement décrypté. Toutes ces possibilités devaient être accessible depuis un menu dans lequel
+                    on rajoutait une 4ème
+                    possibilité qui permettait de mettre fin au programme.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h1 id="projects">Les difficultés rencontrées </h1>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+
+                <p>La première partie du mini projet ne m’a pas posé trop de problème à coder, mais la 3ème a posé un
+                    peu plus de difficultés.
+                    En effet, le fait qu’on n’ait pas la clé de décryptage à fortement compliqué la tâche. Il fallait
+                    faire en sorte que le logiciel
+                    balaye chaque lettre pour les remplacer, puis ajouter un avant la valeur de la clé de décryptage, et
+                    enfin demander à l’utilisateur
+                    si le texte était lisible ou pas pour continuer à effectuer le programme en fonction de la réponse
+                    de l’utilisateur.
+                    J’ai donc rencontré quelques problèmes, parfois ce que je venais de coder ne fonctionnais pas ou ne
+                    donnait pas le résultat attendu…
+                    parfois même le programme ne voulait plus se lancer a cause d’une erreur de codage. Mais avec Félix,
+                    nous
+                    finalement réussi à coder un programme fonctionnel.
+                </p>
+                <h1>Exemple du menu</h1>
+                <p>
+                <ul>
+                    <li>Menu</li>
+                </ul>
+                <ol>
+                    <li>Cryptage d'un texte à partir d'une clé fournie</li>
+                    <li>Décryptage de texte à partir d'une clé fournie</li>
+                    <li>Décryptage d'un texte sans la clé</li>
+                    <li>Fin du programme</li>
+                </ol>
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h1 id="projects">Les conditions de travail</h1>
+            </div>
+        </div>
+
+
+        <div class="row">
+            <div class="col-lg-12 col-md-12 col-xs-12">
+
+                <p>Nous nous sommes répartis le travail en le séparant en deux. En travaillant comme ça, on codait
+                    chacun une moitié du programme
+                    et lorsqu’on avait finis on envoyait notre travail à l’autre pour qu’il vérifie. Lorsque tout était
+                    terminé, nous avons rassemblé
+                    nos travails pour en faire notre mini projet et faire les derniers codages. On a d’abord voulu
+                    utiliser <a href="https://fr.wikipedia.org/wiki/GitHub">GitHub</a> pour pouvoir
+                    communiquer et rassembler nos travaux mais nous n’avions pas tous compris et pour ne pas perdre de
+                    temps on à donc préférer
+                    communiquer par discord. A part la principale difficulté que j’ai mentionné dans la rubrique « Les
+                    difficultés rencontrées », on
+                    n’a pas eu trop de problèmes sauf peut être pour le retour au menu après avoir effectué un cryptage
+                    ou décryptage. On n’a pas
+                    réussi tout de suite et finalement on a transformé le programme entier en fonction « début » et à
+                    chaque fin de cryptage/décryptage
+                    on indiquait au programme qu’il fallait exécuter cette fonction début, en d’autres termes revenir au
+                    début du programme.
+                </p>
+            </div>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h1 id="projects">Code du mini projet 1 </h1>
+            </div>
+        </div>
+
+        <pre><code class="language-python">encorebesoin=True
+        while encorebesoin==True:
+            print('MENU')      #Affichage du menu et ses propositions
+            print("1-Cryptage d'un texte  à partir d'une clé fournie")
+            print("2-Décryptage de texte à partir d'une clé fournie")
+            print("3-Décryptage de texte sans la clé")
+            print("4-Fin du programme")
+        
+            choix=int(input('Quel est votre choix ?'))   #Demande le choix de l'utilisateur par rapport au menu
+            assert type(choix)==int,'Le nombre doit être entier'   #Contrainte pour que le choix soit un nombre entier
+            assert choix<=4 and choix>=1,'Veuillez choisir une des 4 possibilité'   #Contrainte pour que le choix soit compris dans les propositions du menu
+        
+            if choix==1:   #Si le choix est le premier
+                alphabet=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']   #Définition de l'alphabet
+                for x in range(len(alphabet)):   #Dédouble la liste
+                    alphabet.append(alphabet[x])
+                    
+                texte=str(input('Quel est le texte a crypter ?'))   #Demande le texte à crypter
+                clé=int(input('Quel est la clé de cryptage ?'))   #Demande la clé de cryptage
+                assert clé>=0 and clé<26,"La clé doit être valide(c'est à dire entre 0 et 25 inclus)"   #Contrainte pour que la clé soit valide
+                
+                def cryptageLettre(lettre,alphabet,clé):   #Définition du code de cryptage
+                    for i in range(len(alphabet)):
+                        if lettre==' ':   #au cas ou il y a un espace
+                            return ' '
+                        elif alphabet[i]==lettre:   #détecte la lettre à crypter
+                            return str(alphabet[i+clé])
+                    return '@'  #en cas de caractère inconnu
+                texteCrypté=str()
+        
+                for lettre in texte:   #Balaye les lettres de la phrase à crypter
+                    texteCrypté+=cryptageLettre(lettre,alphabet,clé)   #Remplacement des lettres par les lettres cryptées
+                
+                print(texteCrypté)   #Affiche le texte cryptée
+                
+                
+            if choix==2:   #Si le choix est le deuxième
+                alphabet=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']   #Définition de l'alphabet
+                for x in range(len(alphabet)):    #Dédouble la liste
+                    alphabet.append(alphabet[x])
+                    
+                texte=str(input('Quel est le texte a décrypter ?'))   #Demande le texte à décrypter
+                clé=int(input('Quel est la clé de décryptage ?'))   #Demande la clé de décryptage
+                assert clé>=0 and clé<26,"La clé doit être valide(c'est à dire entre 0 et 25 inclus)"   #Contrainte pour que la clé soit valide
+                
+                def decryptageLettre(lettre,alphabet,clé):   #Définition du code de décryptage
+                    for i in range(len(alphabet)):
+                        if lettre==' ':   #au cas ou il y a un espace
+                            return ' '
+                        elif alphabet[i]==lettre:   #Détecte la lettre à décrypter
+                            return str(alphabet[i-clé])
+                    return '@'  #en cas de caractère inconnu
+                texteDécrypté=str()
+        
+                for lettre in texte:   #Balaye les lettres de la phrase à décrypter
+                    texteDécrypté+=decryptageLettre(lettre,alphabet,clé)    #Remplacement des lettres par les lettres décryptées
+                
+                print(texteDécrypté)   #Affiche le texte cryptée
+                
+                
+            if choix==3:   #Si le choix est le troisième
+                alphabet=['A','B','C','D','E','F','G','H','I','J','K','L','M','N','O','P','Q','R','S','T','U','V','W','X','Y','Z']   #Définition de l'alphabet
+                for x in range(len(alphabet)):    #Dédouble la liste
+                    alphabet.append(alphabet[x])
+                
+                cleA=1   #Définit la clé
+                texte=str(input('Quel est le texte a décrypter ?'))   #Demande le texte à décrypter
+                
+                def decryptageLettre(lettre,alphabet,cleA):   #Redéfinit le programme de décryptage 
+                    for i in range(len(alphabet)):
+                        if lettre==' ':   #au cas ou il y a un espace
+                            return ' '
+                        if alphabet[i]==lettre:   #Détecte la lettre à décrypter
+                            return str(alphabet[i-cleA])
+                    return '@'  #en cas de caractère inconnu
+                    
+                for i in range(25):
+                    
+                    texteDecrypte=str()
+                    for lettre in texte:   #Balaye les lettres de la phrase à décrypter
+                        texteDecrypte+=decryptageLettre(lettre,alphabet,cleA)   #Remplacement des lettres par les lettres décryptées
+                
+                    print("Tentative de décryptage avec une clé de",cleA,":",texteDecrypte)   #Affiche le texte décrypté avec le clé utilisée
+                    
+                    ressemblance=input("Si vous visualisez le texte en clair rentrer F (en majuscule ou minuscule) sinon entrée")   #Définit ressemblance
+                    assert ressemblance=='f' or ressemblance=='F' or ressemblance=='' or ressemblance==' ',"Veuillez rentrer une reponse valide"   #Contrainte pour que la réponse soit valide
+                    if ressemblance=='f' or ressemblance=='F':   #Si la clé est la bonne
+                        print("Le texte décrypté :", texteDecrypte, "à été décrypté avec la clé de", cleA)   #Affiche le texte décrypté et la clé à utiliser 
+                        break   #Stop la boucle
+                    elif cleA==25:   #Si toutes les clés possible ont été utilisées
+                        print("Désolé, vous avez essayé toutes les valeurs de clé, le texte  a été  crypté selon une méthode non mono-alphabétique")
+                        break   #Stop la boucle
+                    elif ressemblance==' ' or ressemblance=='':   #Si la clé n'est pas bonne
+                        cleA+=1   #Passe à la prochaine clé
+                        
+            if choix==4:   #Si le choix est le quatrième
+                print("Fin du programme")   #Affiche que c'est la fin du programme
+                encorebesoin=False
+        
+        </code></pre>
+
+
+        <div class="row">
+            <div class="col-12">
+                <h1 id="projects">Quelques screenshots de notre programme</h1>
+            </div>
+        </div>
+
+        <div id="carouselExampleDark" class="carousel carousel-dark slide" data-bs-ride="carousel">
+            <ol class="carousel-indicators">
+                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="0" class="active"></li>
+                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="1"></li>
+                <li data-bs-target="#carouselExampleDark" data-bs-slide-to="2"></li>
+            </ol>
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <img src="img/menu.PNG" class="d-block w-100" alt="Menu">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Menu</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/cryptage.PNG" class="d-block w-100" alt="cryptage">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Cryptage</h5>
+                    </div>
+                </div>
+                <div class="carousel-item">
+                    <img src="img/decryptage.PNG" class="d-block w-100" alt="decryptage">
+                    <div class="carousel-caption d-none d-md-block">
+                        <h5>Decryptage sans clé</h5>
+                    </div>
+                </div>
+            </div>
+            <a class="carousel-control-prev" href="#carouselExampleDark" role="button" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Previous</span>
+            </a>
+            <a class="carousel-control-next" href="#carouselExampleDark" role="button" data-bs-slide="next">
+                <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                <span class="visually-hidden">Next</span>
+            </a>
+        </div>
+
+        <div class="row">
+            <div class="col-12">
+                <h1 id="projects">Présentation Vidéo</h1>
+            </div>
+        </div>
+
+        <div class="row">
+            <div id="videobbb" class="col-12">
+              <video controls preload="metadata" poster="img/fondVideo.png">
+                <source src="video/trailer_1080p.ogg" type="video/ogg">
+                <source src="video/video.MP4" type="video/mp4"> 
+              </video>
+            </div>
+          </div>
+
+        <script src="prism.js"></script>
+</body>
